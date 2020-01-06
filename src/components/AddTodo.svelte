@@ -25,7 +25,6 @@
 <style>
     label {
         font-style: italic;
-        font-family: "Comic Sans MS", sans-serif;
         color: #333333;
     }
 </style>

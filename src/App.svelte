@@ -16,21 +16,46 @@
         }]
         nextId = nextId + 1
     }
+
+    function completeTodo(todoId) {
+        console.log({todoId})
+        const foundTodo = todoList.find(({id}) => id === todoId)
+
+        console.log(foundTodo)
+
+        if (foundTodo) {
+            foundTodo.completed = true
+            todoList = [...todoList, foundTodo]
+            console.log(foundTodo)
+        } else {
+            console.log('TODO not found')
+        }
+        console.log(todoList)
+    }
 </script>
 
 <main>
     <h1>{title}</h1>
 
-    <AddTodo addTodo={addTodo} />
-    <TodoList todoList={todoList} />
+    <div class="container">
+        <AddTodo addTodo={addTodo} />
+        <TodoList
+                todoList={todoList}
+                completeTodo={completeTodo}
+        />
+    </div>
 </main>
 
-<style>
+<style type="text/scss">
     main {
         text-align: center;
         padding: 1em;
-        max-width: 240px;
+    }
+
+    div.container {
         margin: 0 auto;
+        width: 840px;
+        font-family: "Comic Sans MS", sans-serif;
     }
 
     h1 {

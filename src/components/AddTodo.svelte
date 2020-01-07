@@ -2,8 +2,6 @@
     let newTodo = ''
     export let addTodo
 
-    $: console.log({ newTodo })
-
     function addTodoToList(e) {
         if (e.key === 'Enter') {
             addTodo(newTodo)
@@ -22,7 +20,7 @@
     />
 </div>
 
-<style>
+<style type="text/scss">
     label {
         font-style: italic;
         color: #333333;

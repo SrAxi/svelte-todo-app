@@ -1,9 +1,13 @@
 <script>
     export let todoList
     export let completeTodo
+    export let removeTodo
 
     function complete(id) {
         completeTodo(id)
+    }
+    function remove(id) {
+        removeTodo(id)
     }
 </script>
 
@@ -14,7 +18,7 @@
                 <span
                         class={todo.completed ? 'completed todo-title' : 'todo-title'}
                 >{todo.title}</span>
-                <a class="remove-btn">remove</a>
+                <a class="remove-btn" on:click|preventDefault={() => remove(todo.id)}>remove</a>
                 |<a class="complete-btn" on:click|preventDefault={() => complete(todo.id)}>complete</a>
             </li>
         {/each}
@@ -47,7 +51,7 @@
                 }
 
                 &.completed {
-                    text-decoration: underline;
+                    text-decoration: line-through;
                 }
             }
 

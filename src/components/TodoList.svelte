@@ -73,7 +73,7 @@
         {#each todoList as todo (todo.id)}
             <li>
                 <span
-                        class={todo.completed ? 'completed todo-title' : 'todo-title'}
+                        class={`${todo.completed ? 'completed' : ''} todo-title`}
                         transition:fade
                 >{todo.title}</span>
                 <a class="remove-btn" on:click|preventDefault={() => remove(todo.id)}>remove</a>

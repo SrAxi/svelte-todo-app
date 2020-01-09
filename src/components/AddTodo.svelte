@@ -10,6 +10,13 @@
     }
 </script>
 
+<style type="text/scss">
+    label {
+        font-style: italic;
+        color: #333333;
+    }
+</style>
+
 <div class="new-todo">
     <label for="newTodo">Add a new TODO</label>
     <input
@@ -19,10 +26,3 @@
             on:keydown={addTodoToList}
     />
 </div>
-
-<style type="text/scss">
-    label {
-        font-style: italic;
-        color: #333333;
-    }
-</style>

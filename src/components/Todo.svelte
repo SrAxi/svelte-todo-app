@@ -30,6 +30,14 @@
     }
 </script>
 
+<style type="text/scss">
+    div.container {
+        margin: 0 auto;
+        width: 840px;
+        font-family: "Comic Sans MS", sans-serif;
+    }
+</style>
+
 <div class="container">
     <AddTodo addTodo={addTodo} />
     <TodoList
@@ -38,11 +46,3 @@
             removeTodo={removeTodo}
     />
 </div>
-
-<style type="text/scss">
-    div.container {
-        margin: 0 auto;
-        width: 840px;
-        font-family: "Comic Sans MS", sans-serif;
-    }
-</style>

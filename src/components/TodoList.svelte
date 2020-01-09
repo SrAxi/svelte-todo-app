@@ -1,4 +1,6 @@
 <script>
+    import { fade } from 'svelte/transition'
+
     export let todoList
     export let completeTodo
     export let removeTodo
@@ -6,24 +8,11 @@
     function complete(id) {
         completeTodo(id)
     }
+
     function remove(id) {
         removeTodo(id)
     }
 </script>
-
-<div class="todo-list">
-    <ul>
-        {#each todoList as todo (todo.id)}
-            <li>
-                <span
-                        class={todo.completed ? 'completed todo-title' : 'todo-title'}
-                >{todo.title}</span>
-                <a class="remove-btn" on:click|preventDefault={() => remove(todo.id)}>remove</a>
-                |<a class="complete-btn" on:click|preventDefault={() => complete(todo.id)}>complete</a>
-            </li>
-        {/each}
-    </ul>
-</div>
 
 <style type="text/scss">
     div.todo-list {
@@ -78,3 +67,18 @@
         }
     }
 </style>
+
+<div class="todo-list">
+    <ul>
+        {#each todoList as todo (todo.id)}
+            <li>
+                <span
+                        class={todo.completed ? 'completed todo-title' : 'todo-title'}
+                        transition:fade
+                >{todo.title}</span>
+                <a class="remove-btn" on:click|preventDefault={() => remove(todo.id)}>remove</a>
+                |<a class="complete-btn" on:click|preventDefault={() => complete(todo.id)}>complete</a>
+            </li>
+        {/each}
+    </ul>
+</div>

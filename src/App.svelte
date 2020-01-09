@@ -4,12 +4,6 @@
     export let title
 </script>
 
-<main>
-    <h1>{title}</h1>
-
-    <Todo />
-</main>
-
 <style type="text/scss">
     main {
         text-align: center;
@@ -29,3 +23,10 @@
         }
     }
 </style>
+
+<main>
+    <h1>{title}</h1>
+
+    <Todo />
+</main>
+
